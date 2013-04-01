@@ -4,7 +4,7 @@ require 'rvm/capistrano'
 set :application, 'app'
 
 set :scm, :git
-set :repository, 'https://github.com/rubyonrails3/deploy-unicorn'
+set :repository, 'git@github.com:rubyonrails3/testing-0.0.1.6.git'
 set :branch, :master
 
 server '66.228.51.151', :web, :app, :db, :primary => true
@@ -32,6 +32,8 @@ namespace :deploy do
     run "#{sudo} ln -nfs #{current_path}/config/nginx.conf /etc/nginx/sites-enabled/#{application}"
     run "#{sudo} ln -nfs #{current_path}/config/unicorn_init.sh /etc/init.d/unicorn_#{application}"
   end
+
+  after "deploy:setup", "deploy:setup_config"
 
 
 end
