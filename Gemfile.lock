@@ -91,7 +91,7 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
-    unicorn_deployer (0.0.1.6)
+    unicorn_deployer (0.0.1.9)
       capistrano
       rails (>= 3.0.0)
       rvm-capistrano
